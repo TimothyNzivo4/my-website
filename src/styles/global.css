@@ -1,0 +1,17 @@
+/* Global styles for the site. Use CSS variables for theme colors, font imports, and base resets. */
+:root {
+  --color-bg: #fff;
+  --color-text: #222;
+  --color-accent: #ffd700;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Lora', serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Add more base styles as needed */
