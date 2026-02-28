@@ -101,7 +101,7 @@ const AboutImageWrapper = styled.div`
   flex: 1 1 340px;
 `;
 
-const AboutImage = styled(motion.img)`
+const AboutImage = styled.img`
   width: 320px;
   height: 400px;
   object-fit: cover;
@@ -146,7 +146,9 @@ export default function About() {
           </Features>
         </AboutText>
         <AboutImageWrapper>
-          <AboutImage src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=400&facepad=2&q=80" alt="Timothy" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} style={{ width: '520px', height: '400px' }} />
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }}>
+            <AboutImage src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=400&facepad=2&q=80" alt="Timothy" style={{ width: '520px', height: '400px' }} />
+          </motion.div>
         </AboutImageWrapper>
       </AboutSection>
     </Container>

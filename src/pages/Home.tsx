@@ -76,7 +76,7 @@ const ButtonRow = styled.div`
   margin-bottom: 2.5rem;
 `;
 
-const PrimaryButton = styled(motion.button)`
+const PrimaryButton = styled.button`
   background: #ff5c3a;
   color: #fff;
   border: none;
@@ -93,7 +93,7 @@ const PrimaryButton = styled(motion.button)`
   }
 `;
 
-const SecondaryButton = styled(motion.button)`
+const SecondaryButton = styled.button`
   background: transparent;
   color: #fff;
   border: 2px solid #ff5c3a;
@@ -119,7 +119,7 @@ const HeroImageWrapper = styled.div`
   flex: 1 1 340px;
 `;
 
-const HeroImage = styled(motion.img)`
+const HeroImage = styled.img`
   width: 320px;
   height: 400px;
   object-fit: cover;
@@ -154,12 +154,19 @@ export default function Home() {
           <Name initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9 }}>I'm Timothy</Name>
           <Role initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.1 }}>Software Developer</Role>
           <ButtonRow>
-            <PrimaryButton whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }} onClick={() => window.location.href = '/contact'}>Got a project?</PrimaryButton>
-            <SecondaryButton whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }} onClick={() => window.location.href = '/resume'}>My resume</SecondaryButton>
+            <motion.div whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }}>
+              <PrimaryButton onClick={() => window.location.href = '/contact'}>Got a project?</PrimaryButton>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }}>
+              <SecondaryButton onClick={() => window.location.href = '/resume'}>My resume</SecondaryButton>
+            </motion.div>
           </ButtonRow>
         </HeroText>
         <HeroImageWrapper>
-          <HeroImage src={personImg} alt="Timothy" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} />
+          {/* Removed Circle background for plain look */}
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }}>
+            <HeroImage src={personImg} alt="Timothy" />
+          </motion.div>
         </HeroImageWrapper>
       </Hero>
       <SkillsBar>
