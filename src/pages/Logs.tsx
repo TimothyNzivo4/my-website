@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Logs() {
   let logs: any[] = [];
   try {
